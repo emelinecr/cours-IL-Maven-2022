@@ -111,6 +111,7 @@ public class CoffeeMachineUnitTest {
         Mockito.when(mockCup.isEmpty()).thenReturn(false);
 
         coffeeMachineUnderTest.plugToElectricalPlug();
+        coffeeMachineUnderTest.getBeanTank().setBeanCoffeeType(CoffeeType.MOKA);
 
         //assertThrows( [Exception class expected], [lambda expression with the method that throws an exception], [exception message expected])
         //AssertThrows va permettre de venir tester la levée d'une exception, ici lorsque que le contenant passé en

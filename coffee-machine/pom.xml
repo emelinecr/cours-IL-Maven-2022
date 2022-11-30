@@ -50,8 +50,8 @@
                         <phase>test</phase>
                         <configuration>
                             <tasks>
-                                <delete dir="${env.HOME}/jacoco"/>
-                                <mkdir dir="${env.HOME}/jacoco"/>
+                                <delete dir="${%HOME%}/jacoco"/>
+                                <mkdir dir="${%HOME%}/jacoco"/>
                             </tasks>
                         </configuration>
                         <goals>
@@ -149,6 +149,11 @@
             <artifactId>cucumber-junit</artifactId>
             <version>${cucumber.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>fr.imt.cours.IL-Maven-2022</groupId>
+            <artifactId>storage</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
