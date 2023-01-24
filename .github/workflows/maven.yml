@@ -26,19 +26,19 @@ jobs:
       with:
         java-version: '18'
         distribution: 'temurin'
-        cache: maven
+        cache: 'maven'
     - name: Build with Maven
       run: mvn -B install --file pom.xml
-      
-      - uses: actions/checkout@master
-      - uses: codecov/codecov-action@v3
-        with:
-          token: b84df674-1761-4e86-9dde-395cc3a0a5b1 # not required for public repos
-          files: /home/runner/jacoco/jacoco.xml # optional
-          flags: unittests # optional
-          name: codecov-umbrella # optional
-          fail_ci_if_error: true # optional (default = false)
-          verbose: true # optional (default = false)
+ 
+    - uses: actions/checkout@master
+    - uses: codecov/codecov-action@v3
+      with:
+        token: b84df674-1761-4e86-9dde-395cc3a0a5b1# not required for public repos
+        files: /home/runner/jacoco/jacoco.xml # optional
+        flags: unittests # optional
+        name: codecov-umbrella # optional
+        fail_ci_if_error: true # optional (default = false)
+        verbose: true # optional (default = false)
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
